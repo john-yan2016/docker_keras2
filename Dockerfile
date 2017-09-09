@@ -14,6 +14,6 @@ RUN pip --no-cache-dir install \
 
 # install your app
 ADD ai/ /srv/ai/
-RUN chmod +x /srv/ai/test.py
+RUN chmod +x /srv/ai/run.py
 
-CMD ["/srv/ai/test.py"]
+CMD ["/srv/ai/run.py"]
