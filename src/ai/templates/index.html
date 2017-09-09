@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物品识别系统</title>
+<link rel="shortcut icon" href="static/favicon.ico">
+<link href="static/css/bootstrap.css" rel="stylesheet">
+<link href="static/css/cropper.min.css" rel="stylesheet">
+<link href="static/css/main.css"  rel="stylesheet">
+<!--[if IE]>
+    <script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+<script src="static/js/jquery-v1.min.js"></script>
+<script src="static/js/bootstrap.js"></script>
+<script src="static/js/cropper.min.js"></script>
+<!-- Alert -->
+<script src="static/js/main.js"></script> 
+<script src="static/js/ajax_upload.js"></script> 
+</head>
+<body>
+    <!-- Content -->
+<nav class="navbar navbar-inverse" role="navigation">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="/" style="color:#00DDDD;">Image Recognition</a>
+   </div>
+</nav>
+
+<div class="container">
+<div class="row">
+<div class="col-md-8 col-md-offset-2">
+<form id="uploadForm" enctype="multipart/form-data" name="upload_form">
+    <div class="img-container">
+		<img src="" alt="" class="img-responsive" />	
+    </div>
+
+ 	<div class="my_button">
+		<div class="btn-group" id="uploadButton">
+     	<label class="btn btn-primary btn-lg btn-upload" for="inputImage" title="Upload image file">
+        <input class="sr-only"  id="inputImage" name="file" type="file">
+          <i class="glyphicon glyphicon-picture"></i>上传图片
+      	</label>
+    	</div>
+
+    	<div class="btn-group" id="submitButton">
+      	<button id="submit" class="btn btn-success btn-lg" type="button" autocomplete="off">
+        <i class="glyphicon glyphicon-eye-open"></i><span id="button_text">开始识别</span>
+      	</button>
+    	</div>
+	</div> 
+
+	<div style="display:none;">
+
+      <div class="input-group input-group-sm">
+        <label class="input-group-addon" for="dataX">X</label>
+        <input class="form-control" id="dataX" type="text" placeholder="x" name="x">
+        <span class="input-group-addon">px</span>
+      </div>
+
+      <div class="input-group input-group-sm">
+        <label class="input-group-addon" for="dataY">Y</label>
+        <input class="form-control" id="dataY" type="text" placeholder="y" name="y">
+        <span class="input-group-addon">px</span>
+      </div>
+
+      <div class="input-group input-group-sm">
+        <label class="input-group-addon" for="dataWidth">W</label>
+        <input class="form-control" id="dataWidth" type="text" placeholder="width" name="w">
+        <span class="input-group-addon">px</span>
+      </div>
+
+      <div class="input-group input-group-sm">
+        <label class="input-group-addon" for="dataHeight">H</label>
+        <input class="form-control" id="dataHeight" type="text" placeholder="height" name="h">
+        <span class="input-group-addon">px</span>
+      </div>
+
+	</div>
+
+</form>
+
+<div  id="pre_result">
+	<p class="result" id=predict1></p>
+	<div class="progress">
+   		<div class="progress-bar" role="progressbar"
+      	aria-valuemin="0" aria-valuemax="100" style="width: 0%;" id="progress1">
+      	<span id=predict11></span>
+   		</div>
+	</div>
+
+	<p class="result" id=predict2></p>
+	<div class="progress">
+   		<div class="progress-bar" role="progressbar" 
+      	aria-valuemin="0" aria-valuemax="100" style="width: 0%;" id="progress2">
+		<span id=predict22></span>
+   		</div>
+	</div>
+
+	<p class="result" id=predict3></p>
+	<div class="progress">
+   		<div class="progress-bar" role="progressbar" 
+      	aria-valuemin="0" aria-valuemax="100" style="width: 0%;" id="progress3">
+		<span id=predict33></span>
+   		</div>
+	</div>	
+
+	<div class="aligncenter">
+	<img id="loading_img" src="static/loading.gif" class="img-responsive" />
+	</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+</body>
+
+</html>
