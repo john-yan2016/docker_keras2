@@ -13,7 +13,7 @@ RUN pip --no-cache-dir install \
     statsmodels
 
 # install your app
-ADD /srv/ai/ /srv/ai/
+ADD srv/ai/ /srv/ai/
 RUN chmod +x /srv/ai/test.py
 
 CMD ["/srv/ai/test.py"]
